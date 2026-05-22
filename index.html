@@ -10,27 +10,14 @@
 
   <style>
     :root {
-      --bg:      #07060f;
-      --bg2:     #0e0c1a;
-      --bg3:     #150f25;
-      --border:  rgba(255,255,255,.08);
-
-      --violet:  #a855f7;
-      --pink:    #ec4899;
-      --cyan:    #22d3ee;
-      --lime:    #a3e635;
-      --orange:  #fb923c;
-      --amber:   #fbbf24;
-
-      --g1: linear-gradient(135deg, #a855f7, #ec4899);
-      --g2: linear-gradient(135deg, #22d3ee, #a3e635);
-      --g3: linear-gradient(135deg, #fb923c, #fbbf24);
-      --g4: linear-gradient(135deg, #ec4899, #fb923c);
-
-      --text:     #e2d9f3;
-      --text-dim: #7a6fa0;
-      --text-off: #3a3060;
-      --white:    #f0ebff;
+      --bg:       #0a0a0f;
+      --bg2:      #111118;
+      --bg3:      #17171e;
+      --border:   rgba(255,255,255,.07);
+      --white:    #f0f0f0;
+      --text:     #a0a0aa;
+      --text-dim: #585860;
+      --text-off: #303038;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,48 +30,36 @@
       overflow-x: hidden;
     }
 
-
-
-    /* ── Blobs ── */
+    /* ── Subtle background glow ── */
     .blob-wrap {
       position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
     }
     .blob {
       position: absolute; border-radius: 50%;
-      filter: blur(80px); opacity: .18;
-      animation: blobFloat 14s ease-in-out infinite;
+      filter: blur(100px); opacity: .05;
+      animation: blobFloat 18s ease-in-out infinite;
     }
-    .blob1 { width: 600px; height: 600px; background: #a855f7; top: -200px; left: -150px; animation-delay: 0s; }
-    .blob2 { width: 500px; height: 500px; background: #ec4899; top: 30%; right: -100px; animation-delay: -4s; }
-    .blob3 { width: 400px; height: 400px; background: #22d3ee; bottom: 10%; left: 20%; animation-delay: -8s; }
-    .blob4 { width: 300px; height: 300px; background: #fb923c; bottom: -100px; right: 30%; animation-delay: -2s; }
+    .blob1 { width: 700px; height: 700px; background: #fff; top: -300px; left: -200px; animation-delay: 0s; }
+    .blob2 { width: 500px; height: 500px; background: #fff; bottom: 0; right: -150px; animation-delay: -9s; }
     @keyframes blobFloat {
-      0%,100% { transform: translate(0,0) scale(1); }
-      33%      { transform: translate(30px,-40px) scale(1.05); }
-      66%      { transform: translate(-20px,20px) scale(.97); }
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(20px,-30px); }
     }
 
     /* ── Layout ── */
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 48px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
 
     /* ── Nav ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 56px;
+      display: flex; align-items: center; justify-content: flex-end;
+      padding: 24px 56px;
       backdrop-filter: blur(16px);
-      background: rgba(7,6,15,.6);
+      background: rgba(10,10,15,.7);
       border-bottom: 1px solid transparent;
       transition: border-color .3s;
     }
     nav.scrolled { border-bottom-color: var(--border); }
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800; font-size: .95rem;
-      letter-spacing: .04em; text-decoration: none;
-      background: var(--g1); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
       font-family: 'JetBrains Mono', monospace;
@@ -98,32 +73,18 @@
 
     .eyebrow {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
-      margin-bottom: 18px; display: inline-flex; align-items: center; gap: 10px;
-    }
-    .eyebrow-dot {
-      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+      font-size: .65rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 18px; display: block;
     }
 
     h2 {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
       color: var(--white);
       line-height: 1.05;
       letter-spacing: -.02em;
-    }
-    .grad-text {
-      background: var(--g1);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .grad-text-2 {
-      background: var(--g2);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .grad-text-3 {
-      background: var(--g3);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* ── Hero ── */
@@ -133,28 +94,27 @@
     }
     .hero-kicker {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--violet);
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--text-dim);
       margin-bottom: 28px;
       opacity: 0; animation: fadeUp .5s ease .1s forwards;
     }
     h1 {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(3.6rem, 8vw, 7.5rem);
+      font-size: clamp(3.4rem, 7.5vw, 7rem);
       line-height: .92; letter-spacing: -.03em;
       color: var(--white);
       opacity: 0; animation: fadeUp .6s ease .25s forwards;
     }
-    h1 .line-grad {
+    h1 .line-dim {
       display: block;
-      background: linear-gradient(90deg, #a855f7 0%, #ec4899 40%, #fb923c 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      color: var(--text-dim);
     }
     .hero-desc {
-      margin-top: 36px; max-width: 540px;
-      font-size: 1.05rem; font-weight: 300; line-height: 1.78;
-      color: var(--text-dim);
+      margin-top: 36px; max-width: 520px;
+      font-size: 1rem; font-weight: 300; line-height: 1.8;
+      color: var(--text);
       opacity: 0; animation: fadeUp .6s ease .4s forwards;
     }
     .hero-actions {
@@ -163,33 +123,30 @@
     }
     .btn {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
-      padding: 14px 30px; text-decoration: none; border: none;
-      position: relative; overflow: hidden; z-index: 0;
+      font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+      padding: 13px 28px; text-decoration: none; border: none; cursor: pointer;
     }
     .btn-primary {
-      background: var(--g1); color: #fff;
-      box-shadow: 0 0 28px rgba(168,85,247,.35);
-      transition: box-shadow .2s, transform .15s;
+      background: var(--white); color: var(--bg);
+      transition: opacity .2s, transform .15s;
     }
-    .btn-primary:hover { box-shadow: 0 0 44px rgba(168,85,247,.55); transform: translateY(-1px); }
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
     .btn-outline {
-      background: transparent; color: var(--text-dim);
+      background: transparent; color: var(--text);
       border: 1px solid var(--border);
       transition: background .2s, color .2s, border-color .2s;
     }
     .btn-outline:hover { background: var(--bg3); color: var(--white); border-color: rgba(255,255,255,.18); }
 
     .hero-pills {
-      margin-top: 56px; display: flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 52px; display: flex; gap: 8px; flex-wrap: wrap;
       opacity: 0; animation: fadeUp .6s ease .7s forwards;
     }
     .hero-pill {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
+      font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 12px;
+      background: rgba(255,255,255,.04);
       border: 1px solid var(--border);
       color: var(--text-dim);
     }
@@ -197,7 +154,7 @@
     .hero-stats-bar {
       display: grid; grid-template-columns: repeat(3, 1fr);
       border: 1px solid var(--border);
-      background: rgba(14,12,26,.7);
+      background: rgba(17,17,24,.8);
       backdrop-filter: blur(12px);
       margin-top: 72px;
       opacity: 0; animation: fadeUp .6s ease .85s forwards;
@@ -210,10 +167,11 @@
     .hero-stat-num {
       font-family: 'Syne', sans-serif;
       font-weight: 800; font-size: 2.8rem; line-height: 1;
+      color: var(--white);
     }
     .hero-stat-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .14em; text-transform: uppercase;
+      font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
       color: var(--text-dim); margin-top: 6px;
     }
 
@@ -221,32 +179,29 @@
     #about { background: var(--bg2); }
     .about-wrap {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; margin-top: 60px; align-items: start;
+      gap: 80px; margin-top: 56px; align-items: start;
     }
-    .about-text { font-size: 1.02rem; font-weight: 300; line-height: 1.85; color: var(--text-dim); }
+    .about-text { font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--text); }
     .about-text p + p { margin-top: 20px; }
-    .about-text strong { color: var(--text); font-weight: 500; }
+    .about-text strong { color: var(--white); font-weight: 500; }
 
     .skill-panel { display: flex; flex-direction: column; gap: 28px; }
     .skill-group-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
-      margin-bottom: 12px;
+      font-size: .6rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 12px;
     }
     .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .68rem; letter-spacing: .06em;
-      padding: 6px 14px; border-radius: 999px;
-      border: 1px solid; font-weight: 400;
-      transition: transform .15s;
+      font-size: .65rem; letter-spacing: .05em;
+      padding: 5px 13px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      transition: color .15s, border-color .15s;
     }
-    .chip:hover { transform: scale(1.04); }
-    .chip-v { color: #c084fc; border-color: rgba(192,132,252,.3); background: rgba(168,85,247,.08); }
-    .chip-p { color: #f9a8d4; border-color: rgba(249,168,212,.3); background: rgba(236,72,153,.08); }
-    .chip-c { color: #67e8f9; border-color: rgba(103,232,249,.3); background: rgba(34,211,238,.08); }
-    .chip-l { color: #bef264; border-color: rgba(190,242,100,.3); background: rgba(163,230,53,.08); }
-    .chip-o { color: #fdba74; border-color: rgba(253,186,116,.3); background: rgba(251,146,60,.08); }
+    .chip:hover { color: var(--white); border-color: rgba(255,255,255,.18); }
 
     /* ── Projects ── */
     #projects .proj-header {
@@ -255,45 +210,33 @@
     }
     .card-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 1px;
+      border: 1px solid var(--border);
     }
     .card {
       background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
       padding: 36px 32px 28px;
       display: flex; flex-direction: column;
-      position: relative; overflow: hidden;
-      transition: transform .2s, border-color .2s;
+      transition: background .2s;
     }
-    .card:hover { transform: translateY(-4px); }
-    .card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      border-radius: 12px 12px 0 0;
-    }
-    .card-v::before  { background: var(--g1); }
-    .card-c::before  { background: var(--g2); }
-    .card-o::before  { background: var(--g3); }
-    .card-pk::before { background: var(--g4); }
+    .card:hover { background: var(--bg3); }
     .card.featured {
       grid-column: span 2;
-      background: var(--bg3);
     }
     .card-num {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .12em; text-transform: uppercase;
+      font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
       color: var(--text-off); margin-bottom: 20px;
     }
     .card-title {
       font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1.35rem; line-height: 1.25;
+      font-weight: 700; font-size: 1.25rem; line-height: 1.25;
       color: var(--white); margin-bottom: 14px;
     }
-    .card.featured .card-title { font-size: 1.75rem; }
+    .card.featured .card-title { font-size: 1.6rem; }
     .card-desc {
-      font-size: .88rem; font-weight: 300; line-height: 1.7;
-      color: var(--text-dim); flex: 1;
+      font-size: .87rem; font-weight: 300; line-height: 1.72;
+      color: var(--text); flex: 1;
     }
     .card-foot {
       margin-top: 24px; display: flex;
@@ -302,16 +245,16 @@
     .chip-row-sm { display: flex; gap: 6px; flex-wrap: wrap; }
     .chip-sm {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .58rem; letter-spacing: .06em; text-transform: uppercase;
-      padding: 3px 9px; border-radius: 999px;
-      background: rgba(255,255,255,.05); color: var(--text-dim);
+      font-size: .57rem; letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 8px;
+      background: rgba(255,255,255,.04); color: var(--text-dim);
       border: 1px solid var(--border);
     }
     .card-link {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .65rem; letter-spacing: .1em; text-transform: uppercase;
+      font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
       text-decoration: none; color: var(--text-dim);
-      transition: color .2s;
+      transition: color .2s; white-space: nowrap;
     }
     .card-link:hover { color: var(--white); }
 
@@ -319,25 +262,29 @@
     .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
     .cv-col-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+      font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--text-dim);
       padding-bottom: 14px; border-bottom: 1px solid var(--border);
       margin-bottom: 32px;
     }
     .cv-entry + .cv-entry { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); }
-    .cv-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .cv-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; flex-wrap: wrap; gap: 8px; }
     .cv-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); }
     .cv-period {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .08em; color: var(--text-off); white-space: nowrap;
+      font-size: .6rem; letter-spacing: .08em; color: var(--text-off); white-space: nowrap;
     }
-    .cv-org { font-size: .82rem; margin-bottom: 10px; }
-    .cv-detail { font-size: .85rem; font-weight: 300; line-height: 1.7; color: var(--text-dim); }
-    .cv-certs { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+    .cv-org { font-size: .82rem; color: var(--text-dim); margin-bottom: 10px; }
+    .cv-detail { font-size: .85rem; font-weight: 300; line-height: 1.7; color: var(--text); }
+    .cv-certs { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
     .cv-cert {
       display: flex; align-items: center; gap: 10px;
-      font-size: .88rem; color: var(--text-dim);
+      font-size: .85rem; color: var(--text);
     }
-    .cv-cert-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .cv-cert::before {
+      content: ''; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--text-off); flex-shrink: 0;
+    }
     .cv-dl { margin-top: 56px; text-align: center; }
 
     /* ── Contact ── */
@@ -346,36 +293,31 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 80px; align-items: center; margin-top: 60px;
     }
-    .contact-text { font-size: .97rem; font-weight: 300; line-height: 1.8; color: var(--text-dim); margin-top: 20px; }
-    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-text { font-size: .97rem; font-weight: 300; line-height: 1.8; color: var(--text); margin-top: 20px; }
+    .contact-links { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); }
     .contact-card {
       display: flex; align-items: center; gap: 16px;
-      padding: 18px 22px;
-      border-radius: 10px;
-      background: var(--bg3); border: 1px solid var(--border);
+      padding: 20px 24px;
+      background: var(--bg2);
       text-decoration: none;
-      transition: border-color .2s, background .2s, transform .15s;
+      transition: background .2s;
     }
-    .contact-card:hover { transform: translateX(4px); background: rgba(255,255,255,.05); }
-    .contact-card.c-v:hover { border-color: rgba(168,85,247,.4); }
-    .contact-card.c-c:hover { border-color: rgba(34,211,238,.4); }
-    .contact-card.c-p:hover { border-color: rgba(236,72,153,.4); }
+    .contact-card:hover { background: var(--bg3); }
     .contact-icon {
-      width: 36px; height: 36px; border-radius: 8px;
+      width: 34px; height: 34px;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'JetBrains Mono', monospace; font-size: .75rem; font-weight: 400;
-      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+      color: var(--text-dim); flex-shrink: 0;
+      border: 1px solid var(--border);
     }
-    .icon-v { background: rgba(168,85,247,.15); color: #c084fc; }
-    .icon-c { background: rgba(34,211,238,.15); color: #67e8f9; }
-    .icon-p { background: rgba(236,72,153,.15); color: #f9a8d4; }
     .contact-info { flex: 1; }
     .contact-platform {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .58rem; letter-spacing: .14em; text-transform: uppercase;
+      font-size: .56rem; letter-spacing: .14em; text-transform: uppercase;
       color: var(--text-off); display: block; margin-bottom: 3px;
     }
-    .contact-val { font-size: .9rem; color: var(--text); }
+    .contact-val { font-size: .88rem; color: var(--text); }
+    .contact-card:hover .contact-val { color: var(--white); }
 
     /* ── Footer ── */
     footer {
@@ -386,28 +328,21 @@
     }
     .footer-copy {
       font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .1em; color: var(--text-off);
+      font-size: .6rem; letter-spacing: .1em; color: var(--text-off);
     }
-    .footer-sig {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .06em; color: var(--text-off);
-    }
-    .footer-sig .g { background: var(--g1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     /* ── Reveal ── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── Animations ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
+      from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: none; }
     }
 
     /* ── Mobile ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
-      .nav-links { display: none; }
       .container { padding: 0 24px; }
       #hero { padding-top: 90px; }
       .hero-stats-bar { grid-template-columns: 1fr; }
@@ -424,13 +359,10 @@
 <div class="blob-wrap">
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
-  <div class="blob blob3"></div>
-  <div class="blob blob4"></div>
 </div>
 
 <!-- ── Nav ── -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Spiros.dev</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -442,15 +374,15 @@
 <!-- ── Hero ── -->
 <section id="hero">
   <div class="container">
-    <p class="hero-kicker">// Data Engineer</p>
+    <p class="hero-kicker">Data Engineer</p>
     <h1>
       Building the
-      <span class="line-grad">pipelines &amp; systems</span>
+      <span class="line-dim">pipelines &amp; systems</span>
       that power decisions.
     </h1>
     <p class="hero-desc">
-      I design end-to-end data solutions — from ETL pipelines and cloud data platforms
-      to machine learning models and BI dashboards that turn raw data into real business value.
+      End-to-end data solutions — from ETL pipelines and cloud platforms
+      to machine learning models and BI dashboards that turn raw data into business value.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -467,15 +399,15 @@
     </div>
     <div class="hero-stats-bar">
       <div class="hero-stat">
-        <div class="hero-stat-num" style="background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6<sup style="-webkit-text-fill-color:inherit">+</sup></div>
+        <div class="hero-stat-num">6+</div>
         <div class="hero-stat-label">Years Experience</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num" style="background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5</div>
+        <div class="hero-stat-num">5</div>
         <div class="hero-stat-label">Microsoft Certifications</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num" style="background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent">3</div>
+        <div class="hero-stat-num">3</div>
         <div class="hero-stat-label">Companies</div>
       </div>
     </div>
@@ -486,8 +418,8 @@
 <section id="about">
   <div class="container">
     <div class="reveal">
-      <p class="eyebrow" style="color:#c084fc"><span class="eyebrow-dot" style="background:var(--g1)"></span>About Me</p>
-      <h2>Data is only as good as<br>what you <span class="grad-text">do with it.</span></h2>
+      <span class="eyebrow">About Me</span>
+      <h2>Data is only as good as<br>what you do with it.</h2>
     </div>
     <div class="about-wrap reveal">
       <div class="about-text">
@@ -497,21 +429,21 @@
       </div>
       <div class="skill-panel">
         <div>
-          <div class="skill-group-label" style="color:#c084fc">Data Engineering</div>
+          <div class="skill-group-label">Data Engineering</div>
           <div class="chip-row">
-            <span class="chip chip-v">Python</span><span class="chip chip-v">SQL</span><span class="chip chip-v">SSIS</span><span class="chip chip-v">dbt</span><span class="chip chip-v">Databricks</span><span class="chip chip-v">SAP BW</span>
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">SSIS</span><span class="chip">dbt</span><span class="chip">Databricks</span><span class="chip">SAP BW</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-label" style="color:#f9a8d4">Cloud &amp; Platforms</div>
+          <div class="skill-group-label">Cloud &amp; Platforms</div>
           <div class="chip-row">
-            <span class="chip chip-p">Azure</span><span class="chip chip-p">Microsoft Fabric</span><span class="chip chip-p">Terraform</span><span class="chip chip-p">AS/400</span>
+            <span class="chip">Azure</span><span class="chip">Microsoft Fabric</span><span class="chip">Terraform</span><span class="chip">AS/400</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-label" style="color:#67e8f9">Analytics &amp; BI</div>
+          <div class="skill-group-label">Analytics &amp; BI</div>
           <div class="chip-row">
-            <span class="chip chip-c">Power BI</span><span class="chip chip-c">DAX</span><span class="chip chip-c">Excel</span><span class="chip chip-c">R</span>
+            <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Excel</span><span class="chip">R</span>
           </div>
         </div>
       </div>
@@ -524,26 +456,26 @@
   <div class="container">
     <div class="proj-header reveal">
       <div>
-        <p class="eyebrow" style="color:#67e8f9"><span class="eyebrow-dot" style="background:var(--g2)"></span>Portfolio</p>
-        <h2>Selected <span class="grad-text-2">Projects</span></h2>
+        <span class="eyebrow">Portfolio</span>
+        <h2>Selected Projects</h2>
       </div>
-      <a href="https://github.com/SpirosMilingos" class="btn btn-outline" target="_blank">All on GitHub &rarr;</a>
+      <a href="https://github.com/SpirosMilingos" class="btn btn-outline" target="_blank">GitHub &rarr;</a>
     </div>
     <div class="card-grid reveal">
 
-      <div class="card card-v featured">
+      <div class="card featured">
         <div class="card-num">01 — Featured</div>
         <div class="card-title">SAP BW to Microsoft Fabric Migration</div>
         <p class="card-desc">Consulting an energy sector client on a full system migration from SAP BW to Microsoft Fabric. Architecting the lakehouse infrastructure with Terraform, orchestrating data transformations with dbt, and managing version-controlled deployments via Git pipelines.</p>
         <div class="card-foot">
           <div class="chip-row-sm">
-            <span class="chip-sm">SAP BW</span><span class="chip-sm">Microsoft Fabric</span><span class="chip-sm">Terraform</span><span class="chip-sm">dbt</span><span class="chip-sm">Git</span>
+            <span class="chip-sm">SAP BW</span><span class="chip-sm">Fabric</span><span class="chip-sm">Terraform</span><span class="chip-sm">dbt</span><span class="chip-sm">Git</span>
           </div>
           <a href="#" class="card-link">WIP &rarr;</a>
         </div>
       </div>
 
-      <div class="card card-pk">
+      <div class="card">
         <div class="card-num">02</div>
         <div class="card-title">ETL Pipelines for Eurobank</div>
         <p class="card-desc">Designed and enriched ETL processes for corporate clients of Eurobank at Deloitte, integrating data from legacy AS/400 and DB2 sources into modern analytical layers.</p>
@@ -553,7 +485,7 @@
         </div>
       </div>
 
-      <div class="card card-c">
+      <div class="card">
         <div class="card-num">03</div>
         <div class="card-title">Bending Time Prediction</div>
         <p class="card-desc">Supervised machine learning model in Python to predict bending machine operating time, enabling accurate job scheduling and reducing production planning overhead at Delmetal.</p>
@@ -563,7 +495,7 @@
         </div>
       </div>
 
-      <div class="card card-o">
+      <div class="card">
         <div class="card-num">04</div>
         <div class="card-title">Data Warehouse &amp; BI Platform</div>
         <p class="card-desc">Built Delmetal's first data warehouse from scratch, automating data movement with SSIS and delivering operational Power BI dashboards to support management decision-making.</p>
@@ -573,7 +505,7 @@
         </div>
       </div>
 
-      <div class="card card-pk">
+      <div class="card">
         <div class="card-num">05</div>
         <div class="card-title">KPI Reporting Suite</div>
         <p class="card-desc">Developed internal KPI datasets and interactive Power BI reports at Deloitte to track team performance, supporting sprint-aligned delivery and executive visibility.</p>
@@ -591,61 +523,61 @@
 <section id="cv">
   <div class="container">
     <div class="reveal">
-      <p class="eyebrow" style="color:#fdba74"><span class="eyebrow-dot" style="background:var(--g3)"></span>Résumé</p>
-      <h2>Experience &amp; <span class="grad-text-3">Education</span></h2>
+      <span class="eyebrow">Résumé</span>
+      <h2>Experience &amp; Education</h2>
     </div>
     <div class="cv-grid reveal">
       <div>
-        <div class="cv-col-title" style="color:#fdba74">Work Experience</div>
+        <div class="cv-col-title">Work Experience</div>
 
         <div class="cv-entry">
           <div class="cv-head"><span class="cv-role">Data Engineer</span><span class="cv-period">Sep 2025 – Present</span></div>
-          <div class="cv-org" style="color:#fb923c">Witside · Athens, Remote</div>
+          <div class="cv-org">Witside · Athens, Remote</div>
           <p class="cv-detail">Consulting an energy sector client on a system migration from SAP BW to Microsoft Fabric. Architecting lakehouse infrastructure with Terraform and orchestrating transformations with dbt.</p>
         </div>
 
         <div class="cv-entry">
           <div class="cv-head"><span class="cv-role">Data Engineer Consultant</span><span class="cv-period">Jul 2023 – Aug 2025</span></div>
-          <div class="cv-org" style="color:#fb923c">Deloitte · Athens, Remote</div>
+          <div class="cv-org">Deloitte · Athens, Remote</div>
           <p class="cv-detail">Designed and enriched ETL processes for corporate clients of Eurobank (DB2, AS/400). Developed Power BI datasets and reports to track internal KPIs. Worked in an agile team across sprint planning, daily stand-ups, and retrospectives.</p>
         </div>
 
         <div class="cv-entry">
           <div class="cv-head"><span class="cv-role">Full-Stack Data Professional</span><span class="cv-period">Aug 2021 – Jul 2023</span></div>
-          <div class="cv-org" style="color:#fb923c">Delmetal · Thessaloniki, Remote</div>
-          <p class="cv-detail">Developed the company's data warehouse and automated data pipelines (SSIS, SSMS). Built Power BI dashboards to monitor operations and support decision-making. Introduced a supervised ML algorithm in Python to predict machine operating time.</p>
+          <div class="cv-org">Delmetal · Thessaloniki, Remote</div>
+          <p class="cv-detail">Developed the company's data warehouse and automated data pipelines (SSIS, SSMS). Built Power BI dashboards to monitor operations. Introduced a supervised ML algorithm in Python to predict machine operating time.</p>
         </div>
 
         <div class="cv-entry">
           <div class="cv-head"><span class="cv-role">Mechanical Engineer</span><span class="cv-period">Jan 2019 – Aug 2021</span></div>
-          <div class="cv-org" style="color:#fb923c">Delmetal · Thessaloniki, On-site</div>
-          <p class="cv-detail">Led software migration efforts. Designed sheet metal parts in AutoCAD and SolidWorks. Generated G-code for CNC laser and bending machines, managed production flow. Mentored new team members.</p>
+          <div class="cv-org">Delmetal · Thessaloniki, On-site</div>
+          <p class="cv-detail">Led software migration efforts. Designed sheet metal parts in AutoCAD and SolidWorks. Generated G-code for CNC laser and bending machines. Mentored new team members.</p>
         </div>
       </div>
 
       <div>
-        <div class="cv-col-title" style="color:#c084fc">Education</div>
+        <div class="cv-col-title">Education</div>
 
         <div class="cv-entry">
           <div class="cv-head"><span class="cv-role">MSc in Data Science</span><span class="cv-period">2021</span></div>
-          <div class="cv-org" style="color:#a855f7">International Hellenic University</div>
+          <div class="cv-org">International Hellenic University</div>
           <p class="cv-detail">Grade: 8.73/10. Thesis: "Bending Time Prediction" — Supervised Machine Learning in Python. Thesis grade: 10/10.</p>
         </div>
 
         <div class="cv-entry">
           <div class="cv-head"><span class="cv-role">Diploma in Mechanical Engineering</span><span class="cv-period">2017</span></div>
-          <div class="cv-org" style="color:#a855f7">Aristotle University of Thessaloniki</div>
-          <p class="cv-detail">Specialisation in Industrial Management. 5-year programme (300 ECTS). Grade: 7.03/10. Thesis on Revenue Management — EDA, statistical analysis in Excel, and simulation in MATLAB. Thesis grade: 10/10.</p>
+          <div class="cv-org">Aristotle University of Thessaloniki</div>
+          <p class="cv-detail">Specialisation in Industrial Management. 5-year programme (300 ECTS). Grade: 7.03/10. Thesis on Revenue Management — EDA, statistical analysis in Excel, and MATLAB simulation. Thesis grade: 10/10.</p>
         </div>
 
         <div style="margin-top:36px">
-          <div class="cv-col-title" style="color:#67e8f9">Certifications</div>
+          <div class="cv-col-title">Certifications</div>
           <div class="cv-certs">
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#a855f7"></span>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</div>
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#ec4899"></span>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</div>
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#22d3ee"></span>Microsoft Certified: Azure Data Engineer Associate (DP-203)</div>
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#fb923c"></span>Microsoft Certified: Azure Fundamentals (AZ-900)</div>
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#a3e635"></span>Microsoft Certified: Azure Data Fundamentals (DP-900)</div>
+            <div class="cv-cert">Microsoft Certified: Fabric Data Engineer Associate (DP-700)</div>
+            <div class="cv-cert">Microsoft Certified: Power BI Data Analyst Associate (PL-300)</div>
+            <div class="cv-cert">Microsoft Certified: Azure Data Engineer Associate (DP-203)</div>
+            <div class="cv-cert">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+            <div class="cv-cert">Microsoft Certified: Azure Data Fundamentals (DP-900)</div>
           </div>
         </div>
       </div>
@@ -660,30 +592,30 @@
 <section id="contact">
   <div class="container">
     <div class="reveal">
-      <p class="eyebrow" style="color:#bef264"><span class="eyebrow-dot" style="background:var(--g2)"></span>Let's Talk</p>
-      <h2>Open to the right <span class="grad-text-2">opportunity.</span></h2>
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Open to the right opportunity.</h2>
     </div>
     <div class="contact-wrap reveal">
       <div>
         <p class="contact-text">Whether you have a project in mind, want to discuss ideas, or just want to say hello — my inbox is open. I typically respond within 24 hours.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:spirosmilingos@gmail.com" class="contact-card c-v">
-          <div class="contact-icon icon-v">@</div>
+        <a href="mailto:spirosmilingos@gmail.com" class="contact-card">
+          <div class="contact-icon">@</div>
           <div class="contact-info">
             <span class="contact-platform">Email</span>
             <span class="contact-val">spirosmilingos@gmail.com</span>
           </div>
         </a>
-        <a href="https://linkedin.com/in/spiros-milingos" target="_blank" class="contact-card c-c">
-          <div class="contact-icon icon-c">in</div>
+        <a href="https://linkedin.com/in/spiros-milingos" target="_blank" class="contact-card">
+          <div class="contact-icon">in</div>
           <div class="contact-info">
             <span class="contact-platform">LinkedIn</span>
             <span class="contact-val">/in/spiros-milingos</span>
           </div>
         </a>
-        <a href="https://github.com/SpirosMilingos" target="_blank" class="contact-card c-p">
-          <div class="contact-icon icon-p">&lt;/&gt;</div>
+        <a href="https://github.com/SpirosMilingos" target="_blank" class="contact-card">
+          <div class="contact-icon">&lt;/&gt;</div>
           <div class="contact-info">
             <span class="contact-platform">GitHub</span>
             <span class="contact-val">SpirosMilingos</span>
@@ -697,11 +629,9 @@
 <!-- ── Footer ── -->
 <footer>
   <span class="footer-copy">&copy; 2026 Spiros Milingos. All rights reserved.</span>
-  <span class="footer-sig">Built with <span class="g">colour &amp; caffeine.</span></span>
 </footer>
 
 <script>
-  document.getElementById('navbar');
   window.addEventListener('scroll', () =>
     document.getElementById('navbar').classList.toggle('scrolled', scrollY > 40));
 
