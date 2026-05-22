@@ -185,6 +185,13 @@
     .about-text p + p { margin-top: 20px; }
     .about-text strong { color: var(--white); font-weight: 500; }
 
+    .profile-photo {
+      width: 182px; height: 182px; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 1px solid var(--border);
+      display: block; margin-bottom: 28px;
+    }
+
     .skill-panel { display: flex; flex-direction: column; gap: 28px; }
     .skill-group-label {
       font-family: 'Inter', sans-serif;
@@ -428,6 +435,7 @@
         <p>Currently at <strong>Witside</strong>, previously at <strong>Deloitte</strong> and <strong>Delmetal</strong>. Open to freelance collaborations and new opportunities.</p>
       </div>
       <div class="skill-panel">
+        <img src="profile.jpg" alt="Spiros Milingos" class="profile-photo" />
         <div>
           <div class="skill-group-label">Data Engineering</div>
           <div class="chip-row">
