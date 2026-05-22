@@ -10,14 +10,14 @@
 
   <style>
     :root {
-      --bg:       #0a0a0f;
-      --bg2:      #111118;
-      --bg3:      #17171e;
-      --border:   rgba(255,255,255,.07);
-      --white:    #ffffff;
-      --text:     #e8e8e8;
-      --text-dim: #909098;
-      --text-off: #505058;
+      --bg:       #f8f8f8;
+      --bg2:      #f0f0f0;
+      --bg3:      #e8e8e8;
+      --border:   rgba(0,0,0,.09);
+      --white:    #111111;
+      --text:     #333333;
+      --text-dim: #888888;
+      --text-off: #bbbbbb;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,8 +39,8 @@
       filter: blur(100px); opacity: .05;
       animation: blobFloat 18s ease-in-out infinite;
     }
-    .blob1 { width: 700px; height: 700px; background: #fff; top: -300px; left: -200px; animation-delay: 0s; }
-    .blob2 { width: 500px; height: 500px; background: #fff; bottom: 0; right: -150px; animation-delay: -9s; }
+    .blob1 { width: 700px; height: 700px; background: #ccc; top: -300px; left: -200px; animation-delay: 0s; }
+    .blob2 { width: 500px; height: 500px; background: #ccc; bottom: 0; right: -150px; animation-delay: -9s; }
     @keyframes blobFloat {
       0%,100% { transform: translate(0,0); }
       50%      { transform: translate(20px,-30px); }
@@ -55,7 +55,7 @@
       display: flex; align-items: center; justify-content: flex-end;
       padding: 24px 56px;
       backdrop-filter: blur(16px);
-      background: rgba(10,10,15,.7);
+      background: rgba(248,248,248,.85);
       border-bottom: 1px solid transparent;
       transition: border-color .3s;
     }
@@ -154,7 +154,7 @@
     .hero-stats-bar {
       display: grid; grid-template-columns: repeat(3, 1fr);
       border: 1px solid var(--border);
-      background: rgba(17,17,24,.8);
+      background: rgba(232,232,232,.9);
       backdrop-filter: blur(12px);
       margin-top: 72px;
       opacity: 0; animation: fadeUp .6s ease .85s forwards;
