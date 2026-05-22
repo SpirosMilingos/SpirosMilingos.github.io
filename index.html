@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spiros Milingos — Data Engineer & Scientist</title>
+  <title>Spiros Milingos — Data Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
@@ -315,38 +315,6 @@
     }
     .card-link:hover { color: var(--white); }
 
-    /* ── Articles ── */
-    #articles { background: var(--bg2); }
-    .art-list { margin-top: 56px; }
-    .art-row {
-      display: grid; grid-template-columns: 100px 1fr auto;
-      gap: 32px; align-items: start;
-      padding: 28px 0; border-bottom: 1px solid var(--border);
-      text-decoration: none;
-    }
-    .art-row:first-child { border-top: 1px solid var(--border); }
-    .art-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .62rem; letter-spacing: .08em; color: var(--text-off); padding-top: 4px;
-    }
-    .art-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700; font-size: 1.12rem; color: var(--text);
-      line-height: 1.3; transition: color .2s;
-    }
-    .art-row:hover .art-title { color: var(--violet); }
-    .art-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
-      padding: 4px 10px; border-radius: 999px; white-space: nowrap;
-      margin-top: 2px;
-    }
-    .badge-v { color: #c084fc; background: rgba(168,85,247,.12); border: 1px solid rgba(192,132,252,.25); }
-    .badge-p { color: #f9a8d4; background: rgba(236,72,153,.12); border: 1px solid rgba(249,168,212,.25); }
-    .badge-c { color: #67e8f9; background: rgba(34,211,238,.12); border: 1px solid rgba(103,232,249,.25); }
-    .badge-l { color: #bef264; background: rgba(163,230,53,.12); border: 1px solid rgba(190,242,100,.25); }
-    .badge-o { color: #fdba74; background: rgba(251,146,60,.12); border: 1px solid rgba(253,186,116,.25); }
-
     /* ── CV ── */
     .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
     .cv-col-title {
@@ -392,7 +360,6 @@
     .contact-card.c-v:hover { border-color: rgba(168,85,247,.4); }
     .contact-card.c-c:hover { border-color: rgba(34,211,238,.4); }
     .contact-card.c-p:hover { border-color: rgba(236,72,153,.4); }
-    .contact-card.c-l:hover { border-color: rgba(163,230,53,.4); }
     .contact-icon {
       width: 36px; height: 36px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
@@ -402,7 +369,6 @@
     .icon-v { background: rgba(168,85,247,.15); color: #c084fc; }
     .icon-c { background: rgba(34,211,238,.15); color: #67e8f9; }
     .icon-p { background: rgba(236,72,153,.15); color: #f9a8d4; }
-    .icon-l { background: rgba(163,230,53,.15); color: #bef264; }
     .contact-info { flex: 1; }
     .contact-platform {
       font-family: 'JetBrains Mono', monospace;
@@ -449,14 +415,11 @@
       .about-wrap, .cv-grid, .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
       .card-grid { grid-template-columns: 1fr; }
       .card.featured { grid-column: span 1; }
-      .art-row { grid-template-columns: 1fr; gap: 6px; }
       footer { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
 <body>
-
-
 
 <div class="blob-wrap">
   <div class="blob blob1"></div>
@@ -467,11 +430,10 @@
 
 <!-- ── Nav ── -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">YourName.dev</a>
+  <a href="#hero" class="nav-logo">Spiros.dev</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#articles">Articles</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -480,41 +442,41 @@
 <!-- ── Hero ── -->
 <section id="hero">
   <div class="container">
-    <p class="hero-kicker">// Data Engineer &amp; Scientist</p>
+    <p class="hero-kicker">// Data Engineer</p>
     <h1>
       Building the
-      <span class="line-grad">pipelines &amp; models</span>
-      that matter.
+      <span class="line-grad">pipelines &amp; systems</span>
+      that power decisions.
     </h1>
     <p class="hero-desc">
-      I design end-to-end data systems — from real-time ingestion and transformation
-      to machine learning models that ship to production and stay there.
+      I design end-to-end data solutions — from ETL pipelines and cloud data platforms
+      to machine learning models and BI dashboards that turn raw data into real business value.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#cv" class="btn btn-outline">Download CV</a>
+      <a href="Spiros_Milingos_CV.pdf" class="btn btn-outline" target="_blank">Download CV</a>
     </div>
     <div class="hero-pills">
       <span class="hero-pill">Python</span>
-      <span class="hero-pill">Apache Spark</span>
-      <span class="hero-pill">Kafka</span>
+      <span class="hero-pill">SQL</span>
+      <span class="hero-pill">Azure</span>
+      <span class="hero-pill">Microsoft Fabric</span>
+      <span class="hero-pill">Power BI</span>
+      <span class="hero-pill">Databricks</span>
       <span class="hero-pill">dbt</span>
-      <span class="hero-pill">PyTorch</span>
-      <span class="hero-pill">Snowflake</span>
-      <span class="hero-pill">AWS · GCP</span>
     </div>
     <div class="hero-stats-bar">
       <div class="hero-stat">
-        <div class="hero-stat-num" style="background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5<sup style="-webkit-text-fill-color:inherit">+</sup></div>
+        <div class="hero-stat-num" style="background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6<sup style="-webkit-text-fill-color:inherit">+</sup></div>
         <div class="hero-stat-label">Years Experience</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num" style="background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent">30<sup style="-webkit-text-fill-color:inherit">+</sup></div>
-        <div class="hero-stat-label">Projects Shipped</div>
+        <div class="hero-stat-num" style="background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5</div>
+        <div class="hero-stat-label">Microsoft Certifications</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num" style="background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent">12<sup style="-webkit-text-fill-color:inherit">+</sup></div>
-        <div class="hero-stat-label">Articles Written</div>
+        <div class="hero-stat-num" style="background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent">3</div>
+        <div class="hero-stat-label">Companies</div>
       </div>
     </div>
   </div>
@@ -529,33 +491,27 @@
     </div>
     <div class="about-wrap reveal">
       <div class="about-text">
-        <p>Hi — I'm <strong>Your Name</strong>, a data engineer and scientist based in <strong>Your City</strong>. I specialise in designing end-to-end data systems: from ingestion and transformation to the models and dashboards that drive real decisions.</p>
-        <p>My work lives at the intersection of <strong>data infrastructure</strong> and <strong>applied machine learning</strong>. I care about pipelines that are reproducible, models that are interpretable, and dashboards that people actually open.</p>
-        <p>Previously at <strong>Company A</strong> and <strong>Company B</strong>. Currently open to freelance collaborations and full-time opportunities.</p>
+        <p>Hi — I'm <strong>Spiros Milingos</strong>, a data engineer based in <strong>Corfu, Greece</strong>. I specialise in designing end-to-end data solutions: from ETL pipelines and cloud data platforms to machine learning models and BI dashboards that drive real decisions.</p>
+        <p>My work spans both <strong>data engineering</strong> and <strong>data science</strong>, with an unusual background in mechanical engineering that sharpens my systems-thinking and problem-solving approach. I care about reliable pipelines, interpretable models, and dashboards people actually use.</p>
+        <p>Currently at <strong>Witside</strong>, previously at <strong>Deloitte</strong> and <strong>Delmetal</strong>. Open to freelance collaborations and new opportunities.</p>
       </div>
       <div class="skill-panel">
         <div>
           <div class="skill-group-label" style="color:#c084fc">Data Engineering</div>
           <div class="chip-row">
-            <span class="chip chip-v">Python</span><span class="chip chip-v">SQL</span><span class="chip chip-v">Apache Spark</span><span class="chip chip-v">dbt</span><span class="chip chip-v">Airflow</span><span class="chip chip-v">Kafka</span>
+            <span class="chip chip-v">Python</span><span class="chip chip-v">SQL</span><span class="chip chip-v">SSIS</span><span class="chip chip-v">dbt</span><span class="chip chip-v">Databricks</span><span class="chip chip-v">SAP BW</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-label" style="color:#f9a8d4">Data Science &amp; ML</div>
+          <div class="skill-group-label" style="color:#f9a8d4">Cloud &amp; Platforms</div>
           <div class="chip-row">
-            <span class="chip chip-p">PyTorch</span><span class="chip chip-p">scikit-learn</span><span class="chip chip-p">pandas</span><span class="chip chip-p">MLflow</span><span class="chip chip-p">LangChain</span>
+            <span class="chip chip-p">Azure</span><span class="chip chip-p">Microsoft Fabric</span><span class="chip chip-p">Terraform</span><span class="chip chip-p">AS/400</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-label" style="color:#67e8f9">Cloud &amp; Infrastructure</div>
+          <div class="skill-group-label" style="color:#67e8f9">Analytics &amp; BI</div>
           <div class="chip-row">
-            <span class="chip chip-c">AWS</span><span class="chip chip-c">GCP BigQuery</span><span class="chip chip-c">Snowflake</span><span class="chip chip-c">Docker</span><span class="chip chip-c">Terraform</span>
-          </div>
-        </div>
-        <div>
-          <div class="skill-group-label" style="color:#bef264">Visualization</div>
-          <div class="chip-row">
-            <span class="chip chip-l">Looker</span><span class="chip chip-l">Metabase</span><span class="chip chip-l">Plotly</span><span class="chip chip-l">Tableau</span>
+            <span class="chip chip-c">Power BI</span><span class="chip chip-c">DAX</span><span class="chip chip-c">Excel</span><span class="chip chip-c">R</span>
           </div>
         </div>
       </div>
@@ -571,97 +527,62 @@
         <p class="eyebrow" style="color:#67e8f9"><span class="eyebrow-dot" style="background:var(--g2)"></span>Portfolio</p>
         <h2>Selected <span class="grad-text-2">Projects</span></h2>
       </div>
-      <a href="https://github.com/yourusername" class="btn btn-outline" target="_blank">All on GitHub &rarr;</a>
+      <a href="https://github.com/SpirosMilingos" class="btn btn-outline" target="_blank">All on GitHub &rarr;</a>
     </div>
     <div class="card-grid reveal">
+
       <div class="card card-v featured">
         <div class="card-num">01 — Featured</div>
-        <div class="card-title">Real-Time Fraud Detection Pipeline</div>
-        <p class="card-desc">End-to-end streaming pipeline ingesting 200K+ events/sec from Kafka, feature-engineering with Flink, and serving an ensemble model with sub-10ms latency. Reduced false positives by 34% vs. the legacy rule-based system.</p>
+        <div class="card-title">SAP BW to Microsoft Fabric Migration</div>
+        <p class="card-desc">Consulting an energy sector client on a full system migration from SAP BW to Microsoft Fabric. Architecting the lakehouse infrastructure with Terraform, orchestrating data transformations with dbt, and managing version-controlled deployments via Git pipelines.</p>
         <div class="card-foot">
           <div class="chip-row-sm">
-            <span class="chip-sm">Python</span><span class="chip-sm">Kafka</span><span class="chip-sm">Flink</span><span class="chip-sm">XGBoost</span>
+            <span class="chip-sm">SAP BW</span><span class="chip-sm">Microsoft Fabric</span><span class="chip-sm">Terraform</span><span class="chip-sm">dbt</span><span class="chip-sm">Git</span>
           </div>
-          <a href="#" class="card-link">View &rarr;</a>
+          <a href="#" class="card-link">WIP &rarr;</a>
         </div>
       </div>
 
       <div class="card card-pk">
         <div class="card-num">02</div>
-        <div class="card-title">LLM Analytics Co-pilot</div>
-        <p class="card-desc">Natural-language interface over a data warehouse translating plain-English to validated SQL and narrative summaries.</p>
+        <div class="card-title">ETL Pipelines for Eurobank</div>
+        <p class="card-desc">Designed and enriched ETL processes for corporate clients of Eurobank at Deloitte, integrating data from legacy AS/400 and DB2 sources into modern analytical layers.</p>
         <div class="card-foot">
-          <div class="chip-row-sm"><span class="chip-sm">LangChain</span><span class="chip-sm">Snowflake</span></div>
+          <div class="chip-row-sm"><span class="chip-sm">DB2</span><span class="chip-sm">AS/400</span><span class="chip-sm">SQL</span></div>
           <a href="#" class="card-link">View &rarr;</a>
         </div>
       </div>
 
       <div class="card card-c">
         <div class="card-num">03</div>
-        <div class="card-title">Demand Forecasting</div>
-        <p class="card-desc">Temporal fusion transformer on 4 yrs of SKU data. Reduced overstock costs by $2.1M in the first quarter.</p>
+        <div class="card-title">Bending Time Prediction</div>
+        <p class="card-desc">Supervised machine learning model in Python to predict bending machine operating time, enabling accurate job scheduling and reducing production planning overhead at Delmetal.</p>
         <div class="card-foot">
-          <div class="chip-row-sm"><span class="chip-sm">PyTorch</span><span class="chip-sm">dbt</span></div>
+          <div class="chip-row-sm"><span class="chip-sm">Python</span><span class="chip-sm">scikit-learn</span></div>
           <a href="#" class="card-link">View &rarr;</a>
         </div>
       </div>
 
       <div class="card card-o">
         <div class="card-num">04</div>
-        <div class="card-title">Data Observability Platform</div>
-        <p class="card-desc">Open-source schema drift detection, anomaly alerting, and lineage tracking across a multi-cloud lake.</p>
+        <div class="card-title">Data Warehouse &amp; BI Platform</div>
+        <p class="card-desc">Built Delmetal's first data warehouse from scratch, automating data movement with SSIS and delivering operational Power BI dashboards to support management decision-making.</p>
         <div class="card-foot">
-          <div class="chip-row-sm"><span class="chip-sm">Great Expectations</span><span class="chip-sm">Airflow</span></div>
+          <div class="chip-row-sm"><span class="chip-sm">SSIS</span><span class="chip-sm">SSMS</span><span class="chip-sm">Power BI</span></div>
           <a href="#" class="card-link">View &rarr;</a>
         </div>
       </div>
 
       <div class="card card-pk">
         <div class="card-num">05</div>
-        <div class="card-title">Churn Propensity Model</div>
-        <p class="card-desc">Survival analysis + gradient boosting hybrid serving churn scores to CRM in real-time. 82% recall at 0.3 threshold.</p>
+        <div class="card-title">KPI Reporting Suite</div>
+        <p class="card-desc">Developed internal KPI datasets and interactive Power BI reports at Deloitte to track team performance, supporting sprint-aligned delivery and executive visibility.</p>
         <div class="card-foot">
-          <div class="chip-row-sm"><span class="chip-sm">scikit-learn</span><span class="chip-sm">FastAPI</span></div>
+          <div class="chip-row-sm"><span class="chip-sm">Power BI</span><span class="chip-sm">DAX</span></div>
           <a href="#" class="card-link">View &rarr;</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ── Articles ── -->
-<section id="articles">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow" style="color:#f9a8d4"><span class="eyebrow-dot" style="background:var(--g4)"></span>Writing</p>
-      <h2>Thoughts on data<br>and <span class="grad-text">engineering.</span></h2>
-    </div>
-    <div class="art-list reveal">
-      <a href="#" class="art-row">
-        <span class="art-date">May 2025</span>
-        <span class="art-title">Why Most Data Pipelines Fail at Scale — and How to Fix Them</span>
-        <span class="art-badge badge-l">Engineering</span>
-      </a>
-      <a href="#" class="art-row">
-        <span class="art-date">Mar 2025</span>
-        <span class="art-title">A Practical Guide to Feature Stores for Production ML</span>
-        <span class="art-badge badge-v">ML Systems</span>
-      </a>
-      <a href="#" class="art-row">
-        <span class="art-date">Jan 2025</span>
-        <span class="art-title">Text-to-SQL in the Real World: Lessons from 6 Months of Production Use</span>
-        <span class="art-badge badge-p">LLMs</span>
-      </a>
-      <a href="#" class="art-row">
-        <span class="art-date">Nov 2024</span>
-        <span class="art-title">dbt Isn't Enough: A Case for End-to-End Data Observability</span>
-        <span class="art-badge badge-o">Data Quality</span>
-      </a>
-      <a href="#" class="art-row">
-        <span class="art-date">Sep 2024</span>
-        <span class="art-title">Temporal Fusion Transformers: A Working Example on Retail Data</span>
-        <span class="art-badge badge-c">Forecasting</span>
-      </a>
     </div>
   </div>
 </section>
@@ -676,46 +597,61 @@
     <div class="cv-grid reveal">
       <div>
         <div class="cv-col-title" style="color:#fdba74">Work Experience</div>
+
         <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Senior Data Engineer</span><span class="cv-period">2023 – Present</span></div>
-          <div class="cv-org" style="color:#fb923c">Company Name · Remote</div>
-          <p class="cv-detail">Led migration of batch ETL to a streaming architecture on Kafka + Flink, reducing data latency from 8 hours to under 2 minutes across 14 product teams.</p>
+          <div class="cv-head"><span class="cv-role">Data Engineer</span><span class="cv-period">Sep 2025 – Present</span></div>
+          <div class="cv-org" style="color:#fb923c">Witside · Athens, Remote</div>
+          <p class="cv-detail">Consulting an energy sector client on a system migration from SAP BW to Microsoft Fabric. Architecting lakehouse infrastructure with Terraform and orchestrating transformations with dbt.</p>
         </div>
+
         <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Data Scientist</span><span class="cv-period">2021 – 2023</span></div>
-          <div class="cv-org" style="color:#fb923c">Another Company · New York</div>
-          <p class="cv-detail">Built and owned 6 production ML models. Introduced MLflow for experiment tracking, cutting deployment time by 60%.</p>
+          <div class="cv-head"><span class="cv-role">Data Engineer Consultant</span><span class="cv-period">Jul 2023 – Aug 2025</span></div>
+          <div class="cv-org" style="color:#fb923c">Deloitte · Athens, Remote</div>
+          <p class="cv-detail">Designed and enriched ETL processes for corporate clients of Eurobank (DB2, AS/400). Developed Power BI datasets and reports to track internal KPIs. Worked in an agile team across sprint planning, daily stand-ups, and retrospectives.</p>
         </div>
+
         <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Data Analyst</span><span class="cv-period">2019 – 2021</span></div>
-          <div class="cv-org" style="color:#fb923c">First Company · San Francisco</div>
-          <p class="cv-detail">Designed self-serve dashboards used by 200+ stakeholders. Automated weekly reporting, saving ~15 analyst-hours per week.</p>
+          <div class="cv-head"><span class="cv-role">Full-Stack Data Professional</span><span class="cv-period">Aug 2021 – Jul 2023</span></div>
+          <div class="cv-org" style="color:#fb923c">Delmetal · Thessaloniki, Remote</div>
+          <p class="cv-detail">Developed the company's data warehouse and automated data pipelines (SSIS, SSMS). Built Power BI dashboards to monitor operations and support decision-making. Introduced a supervised ML algorithm in Python to predict machine operating time.</p>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-head"><span class="cv-role">Mechanical Engineer</span><span class="cv-period">Jan 2019 – Aug 2021</span></div>
+          <div class="cv-org" style="color:#fb923c">Delmetal · Thessaloniki, On-site</div>
+          <p class="cv-detail">Led software migration efforts. Designed sheet metal parts in AutoCAD and SolidWorks. Generated G-code for CNC laser and bending machines, managed production flow. Mentored new team members.</p>
         </div>
       </div>
+
       <div>
         <div class="cv-col-title" style="color:#c084fc">Education</div>
+
         <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">MSc Computer Science</span><span class="cv-period">2019</span></div>
-          <div class="cv-org" style="color:#a855f7">University Name</div>
-          <p class="cv-detail">Specialisation in ML &amp; Distributed Systems. Thesis on efficient training of time-series models at scale.</p>
+          <div class="cv-head"><span class="cv-role">MSc in Data Science</span><span class="cv-period">2021</span></div>
+          <div class="cv-org" style="color:#a855f7">International Hellenic University</div>
+          <p class="cv-detail">Grade: 8.73/10. Thesis: "Bending Time Prediction" — Supervised Machine Learning in Python. Thesis grade: 10/10.</p>
         </div>
+
         <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">BSc Statistics</span><span class="cv-period">2017</span></div>
-          <div class="cv-org" style="color:#a855f7">University Name</div>
-          <p class="cv-detail">First class honours. Focus on statistical modelling and stochastic processes.</p>
+          <div class="cv-head"><span class="cv-role">Diploma in Mechanical Engineering</span><span class="cv-period">2017</span></div>
+          <div class="cv-org" style="color:#a855f7">Aristotle University of Thessaloniki</div>
+          <p class="cv-detail">Specialisation in Industrial Management. 5-year programme (300 ECTS). Grade: 7.03/10. Thesis on Revenue Management — EDA, statistical analysis in Excel, and simulation in MATLAB. Thesis grade: 10/10.</p>
         </div>
+
         <div style="margin-top:36px">
           <div class="cv-col-title" style="color:#67e8f9">Certifications</div>
           <div class="cv-certs">
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#22d3ee"></span>AWS Solutions Architect – Associate</div>
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#a855f7"></span>Google Professional Data Engineer</div>
-            <div class="cv-cert"><span class="cv-cert-dot" style="background:#ec4899"></span>dbt Analytics Engineering Certification</div>
+            <div class="cv-cert"><span class="cv-cert-dot" style="background:#a855f7"></span>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</div>
+            <div class="cv-cert"><span class="cv-cert-dot" style="background:#ec4899"></span>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</div>
+            <div class="cv-cert"><span class="cv-cert-dot" style="background:#22d3ee"></span>Microsoft Certified: Azure Data Engineer Associate (DP-203)</div>
+            <div class="cv-cert"><span class="cv-cert-dot" style="background:#fb923c"></span>Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+            <div class="cv-cert"><span class="cv-cert-dot" style="background:#a3e635"></span>Microsoft Certified: Azure Data Fundamentals (DP-900)</div>
           </div>
         </div>
       </div>
     </div>
     <div class="cv-dl reveal">
-      <a href="#" class="btn btn-primary">Download Full CV (PDF)</a>
+      <a href="Spiros_Milingos_CV.pdf" class="btn btn-primary" target="_blank">Download Full CV (PDF)</a>
     </div>
   </div>
 </section>
@@ -732,32 +668,25 @@
         <p class="contact-text">Whether you have a project in mind, want to discuss ideas, or just want to say hello — my inbox is open. I typically respond within 24 hours.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:hello@yourname.com" class="contact-card c-v">
+        <a href="mailto:spirosmilingos@gmail.com" class="contact-card c-v">
           <div class="contact-icon icon-v">@</div>
           <div class="contact-info">
             <span class="contact-platform">Email</span>
-            <span class="contact-val">hello@yourname.com</span>
+            <span class="contact-val">spirosmilingos@gmail.com</span>
           </div>
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card c-c">
+        <a href="https://linkedin.com/in/spiros-milingos" target="_blank" class="contact-card c-c">
           <div class="contact-icon icon-c">in</div>
           <div class="contact-info">
             <span class="contact-platform">LinkedIn</span>
-            <span class="contact-val">/in/yourprofile</span>
+            <span class="contact-val">/in/spiros-milingos</span>
           </div>
         </a>
-        <a href="https://github.com/yourusername" target="_blank" class="contact-card c-p">
+        <a href="https://github.com/SpirosMilingos" target="_blank" class="contact-card c-p">
           <div class="contact-icon icon-p">&lt;/&gt;</div>
           <div class="contact-info">
             <span class="contact-platform">GitHub</span>
-            <span class="contact-val">@yourusername</span>
-          </div>
-        </a>
-        <a href="https://medium.com/@yourhandle" target="_blank" class="contact-card c-l">
-          <div class="contact-icon icon-l">M</div>
-          <div class="contact-info">
-            <span class="contact-platform">Medium / Substack</span>
-            <span class="contact-val">@yourhandle</span>
+            <span class="contact-val">SpirosMilingos</span>
           </div>
         </a>
       </div>
@@ -767,13 +696,11 @@
 
 <!-- ── Footer ── -->
 <footer>
-  <span class="footer-copy">&copy; 2025 Your Name. All rights reserved.</span>
+  <span class="footer-copy">&copy; 2026 Spiros Milingos. All rights reserved.</span>
   <span class="footer-sig">Built with <span class="g">colour &amp; caffeine.</span></span>
 </footer>
 
 <script>
-
-
   document.getElementById('navbar');
   window.addEventListener('scroll', () =>
     document.getElementById('navbar').classList.toggle('scrolled', scrollY > 40));
