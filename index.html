@@ -381,17 +381,28 @@
       padding: 5px 8px;
       display: block;
     }
-    .tl-connector {
-      flex: 1;
-      width: 1px;
-      background: var(--border);
-      min-height: 12px;
-      margin-top: 6px;
-    }
-    .tl-company:last-child .tl-connector { background: transparent; }
-
     /* Right column: company header + roles */
     .tl-right { flex: 1; min-width: 0; padding-bottom: 4px; }
+
+    /* Line that connects multiple roles within the same company */
+    .tl-role-list {
+      position: relative;
+      margin-top: 4px;
+    }
+    /* Draw the line only from first dot centre to last dot centre — no stub above */
+    .tl-role-list:not(:has(.tl-role:only-child))::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 21px;    /* centre of first dot (18px offset + 3.5px radius) */
+      bottom: 16px; /* stops roughly at last dot centre */
+      width: 1px;
+      background: var(--border);
+    }
+    /* Single-role: no line, keep dot flush left */
+    .tl-role-list:has(.tl-role:only-child) .tl-role::before {
+      left: 0;
+    }
 
     .tl-company-name {
       font-family: 'Inter', sans-serif;
@@ -409,13 +420,12 @@
     .tl-role {
       position: relative;
       padding: 12px 0 12px 20px;
-      border-top: 1px solid var(--border);
     }
     /* Bullet dot */
     .tl-role::before {
       content: '';
       position: absolute;
-      left: 0; top: 18px;
+      left: -4px; top: 18px;
       width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--bg);
@@ -638,17 +648,18 @@
           <div class="tl-company">
             <div class="tl-left">
               <div class="tl-logo-box" style="background:#F0264A;"><img src="images/witside.jpg" alt="Witside" /></div>
-              <div class="tl-connector"></div>
             </div>
             <div class="tl-right">
               <div class="tl-company-name">Witside</div>
               <div class="tl-company-meta">Sep 2025 – Present · Remote</div>
-              <div class="tl-role">
-                <div class="tl-role-title">Data Engineer</div>
-                <div class="tl-role-period">Sep 2025 – Present</div>
-                <div class="tl-role-body">Consulting a retail sector client on a system migration from SAP BW to Microsoft Fabric. Architecting lakehouse infrastructure with Terraform and orchestrating transformations with dbt.</div>
-                <div class="tl-skills">
-                  <span class="chip-sm">Microsoft Fabric</span><span class="chip-sm">Terraform</span><span class="chip-sm">dbt</span><span class="chip-sm">SAP BW</span><span class="chip-sm">Azure</span>
+              <div class="tl-role-list">
+                <div class="tl-role">
+                  <div class="tl-role-title">Data Engineer</div>
+                  <div class="tl-role-period">Sep 2025 – Present</div>
+                  <div class="tl-role-body">Consulting a retail sector client on a system migration from SAP BW to Microsoft Fabric. Architecting lakehouse infrastructure with Terraform and orchestrating transformations with dbt.</div>
+                  <div class="tl-skills">
+                    <span class="chip-sm">Microsoft Fabric</span><span class="chip-sm">Terraform</span><span class="chip-sm">dbt</span><span class="chip-sm">SAP BW</span><span class="chip-sm">Azure</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -658,25 +669,26 @@
           <div class="tl-company">
             <div class="tl-left">
               <div class="tl-logo-box"><img src="images/deloitte_white.png" alt="Deloitte" /></div>
-              <div class="tl-connector"></div>
             </div>
             <div class="tl-right">
               <div class="tl-company-name">Deloitte</div>
               <div class="tl-company-meta">2 yrs 2 mos · Remote</div>
-              <div class="tl-role">
-                <div class="tl-role-title">Consultant – Data Engineer</div>
-                <div class="tl-role-period">Sep 2024 – Aug 2025 · 1 yr</div>
-                <div class="tl-role-body">Worked on data platform modernisation projects for banking sector clients. Developed Power BI datasets, reports and KPI tracking aligned to sprint delivery.</div>
-                <div class="tl-skills">
-                  <span class="chip-sm">SQL</span><span class="chip-sm">Azure</span><span class="chip-sm">Power BI</span><span class="chip-sm">Data Warehousing</span>
+              <div class="tl-role-list">
+                <div class="tl-role">
+                  <div class="tl-role-title">Consultant – Data Engineer</div>
+                  <div class="tl-role-period">Sep 2024 – Aug 2025 · 1 yr</div>
+                  <div class="tl-role-body">Worked on data platform modernisation projects for banking sector clients. Developed Power BI datasets, reports and KPI tracking aligned to sprint delivery.</div>
+                  <div class="tl-skills">
+                    <span class="chip-sm">SQL</span><span class="chip-sm">Azure</span><span class="chip-sm">Power BI</span><span class="chip-sm">Data Warehousing</span>
+                  </div>
                 </div>
-              </div>
-              <div class="tl-role">
-                <div class="tl-role-title">Business Analyst – Data Engineer</div>
-                <div class="tl-role-period">Jul 2023 – Aug 2024 · 1 yr 2 mos</div>
-                <div class="tl-role-body">Designed and enriched ETL processes for corporate clients of Eurobank, integrating data from legacy AS/400 and DB2 sources into modern analytical layers.</div>
-                <div class="tl-skills">
-                  <span class="chip-sm">IBM Db2</span><span class="chip-sm">AS/400</span><span class="chip-sm">SQL</span><span class="chip-sm">Stored Procedures</span><span class="chip-sm">SSIS</span>
+                <div class="tl-role">
+                  <div class="tl-role-title">Business Analyst – Data Engineer</div>
+                  <div class="tl-role-period">Jul 2023 – Aug 2024 · 1 yr 2 mos</div>
+                  <div class="tl-role-body">Designed and enriched ETL processes for corporate clients of Eurobank, integrating data from legacy AS/400 and DB2 sources into modern analytical layers.</div>
+                  <div class="tl-skills">
+                    <span class="chip-sm">IBM Db2</span><span class="chip-sm">AS/400</span><span class="chip-sm">SQL</span><span class="chip-sm">Stored Procedures</span><span class="chip-sm">SSIS</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -686,25 +698,26 @@
           <div class="tl-company">
             <div class="tl-left">
               <div class="tl-logo-box" style="background:#000;"><img src="images/delmetal.jpg" alt="Delmetal" /></div>
-              <div class="tl-connector"></div>
             </div>
             <div class="tl-right">
               <div class="tl-company-name">Delmetal</div>
               <div class="tl-company-meta">Full-time · 4 yrs 7 mos · Thessaloniki</div>
-              <div class="tl-role">
-                <div class="tl-role-title">Data &amp; Automation Engineer</div>
-                <div class="tl-role-period">Jan 2021 – Jul 2023 · 2 yrs 7 mos · Remote</div>
-                <div class="tl-role-body">Built supervised ML models for time-processing optimisation, improving cost estimation and project scheduling accuracy. Developed the company's first data warehouse and operational Power BI dashboards.</div>
-                <div class="tl-skills">
-                  <span class="chip-sm">SQL</span><span class="chip-sm">Python</span><span class="chip-sm">SSIS</span><span class="chip-sm">SSMS</span><span class="chip-sm">Power BI</span><span class="chip-sm">scikit-learn</span>
+              <div class="tl-role-list">
+                <div class="tl-role">
+                  <div class="tl-role-title">Data &amp; Automation Engineer</div>
+                  <div class="tl-role-period">Jan 2021 – Jul 2023 · 2 yrs 7 mos · Remote</div>
+                  <div class="tl-role-body">Built supervised ML models for time-processing optimisation, improving cost estimation and project scheduling accuracy. Developed the company's first data warehouse and operational Power BI dashboards.</div>
+                  <div class="tl-skills">
+                    <span class="chip-sm">SQL</span><span class="chip-sm">Python</span><span class="chip-sm">SSIS</span><span class="chip-sm">SSMS</span><span class="chip-sm">Power BI</span><span class="chip-sm">scikit-learn</span>
+                  </div>
                 </div>
-              </div>
-              <div class="tl-role">
-                <div class="tl-role-title">Mechanical Engineer</div>
-                <div class="tl-role-period">Jan 2019 – Dec 2020 · 2 yrs · On-site</div>
-                <div class="tl-role-body">Designed and optimised sheet metal parts (2D AutoCAD, 3D SolidWorks). Generated G-code for CNC laser and bending machines. Managed production flow and mentored new team members.</div>
-                <div class="tl-skills">
-                  <span class="chip-sm">AutoCAD</span><span class="chip-sm">SolidWorks</span><span class="chip-sm">CNC</span>
+                <div class="tl-role">
+                  <div class="tl-role-title">Mechanical Engineer</div>
+                  <div class="tl-role-period">Jan 2019 – Dec 2020 · 2 yrs · On-site</div>
+                  <div class="tl-role-body">Designed and optimised sheet metal parts (2D AutoCAD, 3D SolidWorks). Generated G-code for CNC laser and bending machines. Managed production flow and mentored new team members.</div>
+                  <div class="tl-skills">
+                    <span class="chip-sm">AutoCAD</span><span class="chip-sm">SolidWorks</span><span class="chip-sm">CNC</span>
+                  </div>
                 </div>
               </div>
             </div>
