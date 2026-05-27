@@ -347,6 +347,100 @@
       to   { opacity: 1; transform: none; }
     }
 
+    /* ── CV Timeline ── */
+    .cv-timeline { position: relative; }
+
+    .tl-company {
+      display: flex;
+      gap: 0;
+      margin-bottom: 28px;
+    }
+    .tl-company:last-child { margin-bottom: 0; }
+
+    /* Left column: logo box + vertical connector */
+    .tl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 84px;
+      margin-right: 18px;
+    }
+    .tl-logo-box {
+      width: 84px; height: 36px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      background: #fff;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .tl-logo-box img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      padding: 5px 8px;
+      display: block;
+    }
+    .tl-connector {
+      flex: 1;
+      width: 1px;
+      background: var(--border);
+      min-height: 12px;
+      margin-top: 6px;
+    }
+    .tl-company:last-child .tl-connector { background: transparent; }
+
+    /* Right column: company header + roles */
+    .tl-right { flex: 1; min-width: 0; padding-bottom: 4px; }
+
+    .tl-company-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; font-size: .97rem;
+      color: var(--white);
+      padding-top: 7px;
+    }
+    .tl-company-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem; color: var(--text-dim);
+      margin-top: 3px; margin-bottom: 14px;
+    }
+
+    /* Individual role row */
+    .tl-role {
+      position: relative;
+      padding: 12px 0 12px 20px;
+      border-top: 1px solid var(--border);
+    }
+    /* Bullet dot */
+    .tl-role::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 18px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--text-off);
+    }
+    .tl-role-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600; font-size: .9rem;
+      color: var(--white);
+    }
+    .tl-role-period {
+      font-family: 'Inter', sans-serif;
+      font-size: .65rem; letter-spacing: .06em;
+      color: var(--text-dim);
+      margin-top: 3px; margin-bottom: 7px;
+    }
+    .tl-role-body {
+      font-size: .82rem; font-weight: 300; line-height: 1.72;
+      color: var(--text);
+    }
+    .tl-skills {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 10px;
+    }
+
     /* ── Mobile ── */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
@@ -435,7 +529,7 @@
         <p>Currently at <strong>Witside</strong>, previously at <strong>Deloitte</strong> and <strong>Delmetal</strong>. Open to freelance collaborations and new opportunities.</p>
       </div>
       <div class="skill-panel">
-        <img src="profile.jpg" alt="Spiros Milingos" class="profile-photo" />
+        <img src="images/profile.jpg" alt="Spiros Milingos" class="profile-photo" />
         <div>
           <div class="skill-group-label">Data Engineering</div>
           <div class="chip-row">
@@ -538,29 +632,85 @@
       <div>
         <div class="cv-col-title">Work Experience</div>
 
-        <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Data Engineer</span><span class="cv-period">Sep 2025 – Present</span></div>
-          <div class="cv-org">Witside · Athens, Remote</div>
-          <p class="cv-detail">Consulting an retail sector client on a system migration from SAP BW to Microsoft Fabric. Architecting lakehouse infrastructure with Terraform and orchestrating transformations with dbt.</p>
-        </div>
+        <div class="cv-timeline">
 
-        <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Data Engineer Consultant</span><span class="cv-period">Jul 2023 – Aug 2025</span></div>
-          <div class="cv-org">Deloitte · Athens, Remote</div>
-          <p class="cv-detail">Designed and enriched ETL processes for corporate clients of Eurobank (DB2, AS/400). Developed Power BI datasets and reports to track internal KPIs. Worked in an agile team across sprint planning, daily stand-ups, and retrospectives.</p>
-        </div>
+          <!-- Witside -->
+          <div class="tl-company">
+            <div class="tl-left">
+              <div class="tl-logo-box" style="background:#F0264A;"><img src="images/witside.jpg" alt="Witside" /></div>
+              <div class="tl-connector"></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-company-name">Witside</div>
+              <div class="tl-company-meta">Sep 2025 – Present · Remote</div>
+              <div class="tl-role">
+                <div class="tl-role-title">Data Engineer</div>
+                <div class="tl-role-period">Sep 2025 – Present</div>
+                <div class="tl-role-body">Consulting a retail sector client on a system migration from SAP BW to Microsoft Fabric. Architecting lakehouse infrastructure with Terraform and orchestrating transformations with dbt.</div>
+                <div class="tl-skills">
+                  <span class="chip-sm">Microsoft Fabric</span><span class="chip-sm">Terraform</span><span class="chip-sm">dbt</span><span class="chip-sm">SAP BW</span><span class="chip-sm">Azure</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Full-Stack Data Professional</span><span class="cv-period">Aug 2021 – Jul 2023</span></div>
-          <div class="cv-org">Delmetal · Thessaloniki, Remote</div>
-          <p class="cv-detail">Developed the company's data warehouse and automated data pipelines (SSIS, SSMS). Built Power BI dashboards to monitor operations. Introduced a supervised ML algorithm in Python to predict machine operating time.</p>
-        </div>
+          <!-- Deloitte -->
+          <div class="tl-company">
+            <div class="tl-left">
+              <div class="tl-logo-box"><img src="images/deloitte_white.png" alt="Deloitte" /></div>
+              <div class="tl-connector"></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-company-name">Deloitte</div>
+              <div class="tl-company-meta">2 yrs 2 mos · Remote</div>
+              <div class="tl-role">
+                <div class="tl-role-title">Consultant – Data Engineer</div>
+                <div class="tl-role-period">Sep 2024 – Aug 2025 · 1 yr</div>
+                <div class="tl-role-body">Worked on data platform modernisation projects for banking sector clients. Developed Power BI datasets, reports and KPI tracking aligned to sprint delivery.</div>
+                <div class="tl-skills">
+                  <span class="chip-sm">SQL</span><span class="chip-sm">Azure</span><span class="chip-sm">Power BI</span><span class="chip-sm">Data Warehousing</span>
+                </div>
+              </div>
+              <div class="tl-role">
+                <div class="tl-role-title">Business Analyst – Data Engineer</div>
+                <div class="tl-role-period">Jul 2023 – Aug 2024 · 1 yr 2 mos</div>
+                <div class="tl-role-body">Designed and enriched ETL processes for corporate clients of Eurobank, integrating data from legacy AS/400 and DB2 sources into modern analytical layers.</div>
+                <div class="tl-skills">
+                  <span class="chip-sm">IBM Db2</span><span class="chip-sm">AS/400</span><span class="chip-sm">SQL</span><span class="chip-sm">Stored Procedures</span><span class="chip-sm">SSIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div class="cv-entry">
-          <div class="cv-head"><span class="cv-role">Mechanical Engineer</span><span class="cv-period">Jan 2019 – Aug 2021</span></div>
-          <div class="cv-org">Delmetal · Thessaloniki, On-site</div>
-          <p class="cv-detail">Led software migration efforts. Designed sheet metal parts in AutoCAD and SolidWorks. Generated G-code for CNC laser and bending machines. Mentored new team members.</p>
-        </div>
+          <!-- Delmetal -->
+          <div class="tl-company">
+            <div class="tl-left">
+              <div class="tl-logo-box" style="background:#000;"><img src="images/delmetal.jpg" alt="Delmetal" /></div>
+              <div class="tl-connector"></div>
+            </div>
+            <div class="tl-right">
+              <div class="tl-company-name">Delmetal</div>
+              <div class="tl-company-meta">Full-time · 4 yrs 7 mos · Thessaloniki</div>
+              <div class="tl-role">
+                <div class="tl-role-title">Data &amp; Automation Engineer</div>
+                <div class="tl-role-period">Jan 2021 – Jul 2023 · 2 yrs 7 mos · Remote</div>
+                <div class="tl-role-body">Built supervised ML models for time-processing optimisation, improving cost estimation and project scheduling accuracy. Developed the company's first data warehouse and operational Power BI dashboards.</div>
+                <div class="tl-skills">
+                  <span class="chip-sm">SQL</span><span class="chip-sm">Python</span><span class="chip-sm">SSIS</span><span class="chip-sm">SSMS</span><span class="chip-sm">Power BI</span><span class="chip-sm">scikit-learn</span>
+                </div>
+              </div>
+              <div class="tl-role">
+                <div class="tl-role-title">Mechanical Engineer</div>
+                <div class="tl-role-period">Jan 2019 – Dec 2020 · 2 yrs · On-site</div>
+                <div class="tl-role-body">Designed and optimised sheet metal parts (2D AutoCAD, 3D SolidWorks). Generated G-code for CNC laser and bending machines. Managed production flow and mentored new team members.</div>
+                <div class="tl-skills">
+                  <span class="chip-sm">AutoCAD</span><span class="chip-sm">SolidWorks</span><span class="chip-sm">CNC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /cv-timeline -->
       </div>
 
       <div>
